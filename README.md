@@ -1,16 +1,8 @@
 # crud_banco
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<br>
+ É sempre bom trabalhar em prol de algo, seja para fazer uma grande viagem, comprar a casa própria ou mesmo trocar de carro. Por isso,  desenvolvido aplicativo para  controle de gastos pessoais, e uma lista de compras que auxiliara o usuário quando estiver no  supermercado no momento das compras.Tendo com publico alvo, dona de casa e casais.<br><br>
+Projeto: 
+    Desenvolvido em flutter, utilizando banco de dado noSQL Google Cloud Firestore.<br><br>
+    Contas se acumulam, planilhas ficam desatualizadas, orçamentos são ignorados e, quando menos esperam, não conseguem mais visualizar a saúde financeira.<br>
+E ao fazer uma lista de supermercado e lembra de todos os produto de forma que não se esqueça.<br><br>
+    Com base nos problemas levantado foi desenvolvi aplicativo onde o usuário pode adicionar as contas e gasta que  são gerado, tendo também a possibilidade de edição e remoção, é uma lista de compras onde o usuário adiciona vários produto e no momento de sua compra ele tem a possibilidade de remover da lista o produto ao ser adicionado no carrinho.
