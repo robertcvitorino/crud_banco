@@ -13,14 +13,11 @@ class _CriarOrcamentoState extends State<CriarOrcamento> {
 
   var nome = "";
   var valor = "";
-  // Create a text controller and use it to retrieve the current value
-  // of the TextField.
   final nomeController = TextEditingController();
   final valorController = TextEditingController();
 
   @override
   void dispose() {
-    // Clean up the controller when the widget is disposed.
     nomeController.dispose();
     valorController.dispose();
 
@@ -32,11 +29,12 @@ class _CriarOrcamentoState extends State<CriarOrcamento> {
     valorController.clear();
   }
 
-  // Adding Student
+/* Conexão com banco Firebase */
   CollectionReference orcamento =
       FirebaseFirestore.instance.collection('orcamento');
 
   Future<void> addOrcamento() {
+    /* Criando registo no bando */
     return orcamento
         .add({'nome': nome, 'valor': valor})
         .then((value) => print('Adicionar produto'))

@@ -10,20 +10,14 @@ class CriarProduto extends StatefulWidget {
 
 class _CriarProdutoState extends State<CriarProduto> {
   final _formKey = GlobalKey<FormState>();
-
   var nome = "";
   var quantidade = "";
-  // Create a text controller and use it to retrieve the current value
-  // of the TextField.
   final nomeController = TextEditingController();
   final quantidadeController = TextEditingController();
-
   @override
   void dispose() {
-    // Clean up the controller when the widget is disposed.
     nomeController.dispose();
     quantidadeController.dispose();
-
     super.dispose();
   }
 
@@ -32,11 +26,12 @@ class _CriarProdutoState extends State<CriarProduto> {
     quantidadeController.clear();
   }
 
-  // Adding Student
+  /* Conexão com banco Firebase */
   CollectionReference produto =
       FirebaseFirestore.instance.collection('produto');
 
   Future<void> addProduto() {
+    /* Criação do objeto no banco */
     return produto
         .add({'nome': nome, 'quantidade': quantidade})
         .then((value) => print('Adicionar produto'))

@@ -12,12 +12,15 @@ class OrcamentoPage extends StatefulWidget {
 }
 
 class _OrcamentoPageState extends State<OrcamentoPage> {
+  /* Conexão com banco Firebase */
   final Stream<QuerySnapshot> orcamentoStream =
       FirebaseFirestore.instance.collection('orcamento').snapshots();
 
+  /* Instanciado objeto collection */
   CollectionReference orcamento =
       FirebaseFirestore.instance.collection('orcamento');
   Future<void> deleteOrcamento(id) {
+    /* Delete do objeto no banco */
     return orcamento
         .doc(id)
         .delete()

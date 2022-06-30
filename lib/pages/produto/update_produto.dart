@@ -12,11 +12,12 @@ class ProdutoUpdate extends StatefulWidget {
 class _ProdutoUpdateState extends State<ProdutoUpdate> {
   final _formKey = GlobalKey<FormState>();
 
-  // Updaing Student
+  /* Conexão com banco Firebase */
   CollectionReference produto =
       FirebaseFirestore.instance.collection('produto');
 
   Future<void> updateUser(id, nome, quantidade) {
+    /*Update do objeto no banco */
     return produto
         .doc(id)
         .update({
@@ -35,7 +36,6 @@ class _ProdutoUpdateState extends State<ProdutoUpdate> {
       ),
       body: Form(
           key: _formKey,
-          // Getting Specific Data by ID
           child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
             future: FirebaseFirestore.instance
                 .collection('produto')

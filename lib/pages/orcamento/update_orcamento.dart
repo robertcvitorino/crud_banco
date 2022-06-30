@@ -15,12 +15,12 @@ class OrcamentoUpdate extends StatefulWidget {
 
 class _OrcamentoUpdateState extends State<OrcamentoUpdate> {
   final _formKey = GlobalKey<FormState>();
-
-  // Updaing Student
+  /* Conexão com banco Firebase */
   CollectionReference orcamento =
       FirebaseFirestore.instance.collection('orcamento');
 
   Future<void> updateUser(id, nome, valor) {
+    /* Update do objeto no banco  */
     return orcamento
         .doc(id)
         .update({
@@ -39,7 +39,6 @@ class _OrcamentoUpdateState extends State<OrcamentoUpdate> {
       ),
       body: Form(
           key: _formKey,
-          // Getting Specific Data by ID
           child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
             future: FirebaseFirestore.instance
                 .collection('orcamento')

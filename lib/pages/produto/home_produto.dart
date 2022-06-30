@@ -11,14 +11,15 @@ class ProdutoPage extends StatefulWidget {
 }
 
 class _ProdutoPageState extends State<ProdutoPage> {
+  /* Conexão com banco Firebase */
   final Stream<QuerySnapshot> produtoStream =
       FirebaseFirestore.instance.collection('produto').snapshots();
 
-  // For Deleting User
+  /*Instanciado objeto de collection no banco */
   CollectionReference produto =
       FirebaseFirestore.instance.collection('produto');
   Future<void> deleteProduto(id) {
-    // print("User Deleted $id");
+    /* Delete de documento no banco */
     return produto
         .doc(id)
         .delete()
